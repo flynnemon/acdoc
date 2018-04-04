@@ -5,7 +5,7 @@
   "main": "bin/acdoc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "acdoc": "acdoc"
+    "acdoc": "node ./bin/acdoc"
   },
   "pre-commit": [
     "acdoc"
