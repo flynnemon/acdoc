@@ -55,6 +55,8 @@ const writeFile = (file, name) => {
 	});
 };
 
+
+console.log("Starting ACdoc");
 fullname().then(name => {
 		sgf('A', ((err, data) => {
 		_.forEach(data, (file) => {
