@@ -3,7 +3,7 @@
 /*
 * Created by:           Ryan Flynn
 * Created Date:         Wed, 04 Apr 2018 03:49:43 GMT
-* Date last edited:     Wed, 04 Apr 2018 07:44:45 GMT
+* Date last edited:     Wed, 04 Apr 2018 07:54:35 GMT
 * Edited last by:       Ryan Flynn
 * Contributors:         Ryan Flynn, Adam Link
 */
@@ -13,7 +13,7 @@ const fs = require("fs");
 const path = require("path");
 const sgf = require("staged-git-files");
 const _ = require("lodash");
-const simpleGit = require('simple-git')(workingDirPath);
+const simpleGit = require('simple-git')();
 
 const slashComments = [".js", ".jsx", ".scss"];
 
@@ -46,6 +46,7 @@ ${doc}`;
 };
 
 const jsStyle = (file, name, fileRel) => {
+    console.log(fileRel);
     let matches;
     fs.readFile(file, "utf8", (err,doc) => {
         if (err) {
