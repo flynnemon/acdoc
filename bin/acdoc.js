@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /*
-* Created by: 			Ryan Flynn
-* Created Date: 		Wed, 04 Apr 2018 03:49:43 GMT
-* Date last edited:		Wed, 04 Apr 2018 07:17:02 GMT
-* Edited last by:		Ryan Flynn
-* Contributors: 		Ryan Flynn, Adam Link
+* Created by:           Ryan Flynn
+* Created Date:         Wed, 04 Apr 2018 03:49:43 GMT
+* Date last edited:     Wed, 04 Apr 2018 07:18:13 GMT
+* Edited last by:       Ryan Flynn
+* Contributors:         Ryan Flynn, Adam Link
 */
 
 const fullname = require("fullname");
@@ -17,31 +17,31 @@ const _ = require("lodash");
 const slashComments = [".js", ".jsx", ".scss"];
 
 const writeJsStyle = (file, name, filename) => {
-	fs.readFile(file, "utf8", (err,doc) => {
-	    if (err) {
-	        return console.log(err);
-	    }
+    fs.readFile(file, "utf8", (err,doc) => {
+        if (err) {
+            return console.log(err);
+        }
 
-	    let acBlock = `/*
-* Created by: 			${name}
-* Created Date: 		${new Date().toUTCString()}
-* Date last edited:		${new Date().toUTCString()}
-* Edited last by:		${name}
-* Contributors: 		${name}
+        let acBlock = `/*
+* Created by:           ${name}
+* Created Date:         ${new Date().toUTCString()}
+* Date last edited:     ${new Date().toUTCString()}
+* Edited last by:       ${name}
+* Contributors:         ${name}
 */
 
-${doc}`
+${doc}`;
 
-	    try {
-	        fs.writeFile(file, acBlock, "utf8", (err) => {
-	            if (err) return console.log(err);
-	            console.log(`Creating accountibility docblock for ${filename}`);
-	        });
-	    } catch(err) {
-	        return;
-	    }
-	});
-}
+        try {
+            fs.writeFile(file, acBlock, "utf8", (err) => {
+                if (err) return console.log(err);
+                console.log(`Creating accountibility docblock for ${filename}`);
+            });
+        } catch(err) {
+            return;
+        }
+    });
+};
 
 const jsStyle = (file, name, filename) => {
     let matches;
