@@ -3,10 +3,19 @@
 /*
 * Created by: 			Ryan Flynn
 * Created Date: 		Wed, 04 Apr 2018 03:49:43 GMT
-* Date last edited:		Wed, 04 Apr 2018 04:25:12 GMT
+* Date last edited:		Wed, 04 Apr 2018 05:31:19 GMT
 * Edited last by:		Ryan Flynn
 * Contributors: 		Ryan Flynn, Adam Link
 */
+
+
+
+
+
+
+
+
+
 
 
 const fullname = require('fullname');
@@ -58,10 +67,8 @@ const writeFile = (file, name) => {
 
 console.log("Starting ACdoc");
 fullname().then(name => {
-	sgf('A', ((err, data) => {
-		console.log(data);
+	sgf('AMCR', ((err, data) => {
 		_.forEach(data, (file) => {
-			console.log(`Updating accountibility docblock for ${file.filename}`);
 			let abPath = path.resolve(file.filename);
 			if( slashComments.indexOf(path.extname(abPath)) > -1 ){
 				writeFile(abPath, name)
