@@ -3,7 +3,7 @@
 /*
 * Created by:           Ryan Flynn
 * Created Date:         Wed, 04 Apr 2018 03:49:43 GMT
-* Date last edited:     Wed, 04 Apr 2018 07:43:35 GMT
+* Date last edited:     Wed, 04 Apr 2018 07:44:45 GMT
 * Edited last by:       Ryan Flynn
 * Contributors:         Ryan Flynn, Adam Link
 */
@@ -13,10 +13,11 @@ const fs = require("fs");
 const path = require("path");
 const sgf = require("staged-git-files");
 const _ = require("lodash");
+const simpleGit = require('simple-git')(workingDirPath);
 
 const slashComments = [".js", ".jsx", ".scss"];
 
-const writeJsStyle = (file, name, filename) => {
+const writeJsStyle = (file, name, fileRel) => {
     fs.readFile(file, "utf8", (err,doc) => {
         if (err) {
             return console.log(err);
@@ -35,7 +36,8 @@ ${doc}`;
         try {
             fs.writeFile(file, acBlock, "utf8", (err) => {
                 if (err) return console.log(err);
-                console.log(`Creating accountibility docblock for ${filename}`);
+                simpleGit.add(fileRel);
+                console.log(`Creating accountibility docblock for ${fileRel.filename}`);
             });
         } catch(err) {
             return;
@@ -43,7 +45,7 @@ ${doc}`;
     });
 };
 
-const jsStyle = (file, name, filename) => {
+const jsStyle = (file, name, fileRel) => {
     let matches;
     fs.readFile(file, "utf8", (err,doc) => {
         if (err) {
@@ -71,10 +73,11 @@ const jsStyle = (file, name, filename) => {
             }
             fs.writeFile(file, doc, "utf8", (err) => {
                 if (err) return console.log(err);
-                console.log(`Updating accountibility docblock for ${filename}`);
+                console.log(`Updating accountibility docblock for ${fileRel.filename}`);
+                simpleGit.add(fileRel);
             });
         } catch(err) {
-            writeJsStyle(file, name, filename);
+            writeJsStyle(file, name, fileRel);
         }
     });
 };
@@ -87,7 +90,7 @@ fullname().then(name => {
             let abPath = path.resolve(file.filename);
             // Run on JS style comments
             if( slashComments.indexOf(path.extname(abPath)) > -1 ){
-                jsStyle(abPath, name, file.filename);
+                jsStyle(abPath, name, file);
             }
         });
     }));
