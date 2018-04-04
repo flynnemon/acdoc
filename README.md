@@ -20,7 +20,39 @@ Currently `ACdoc` only supports editing existing AC Blocks but will soon have th
 ```
 npm install -g acdoc
 ```
+or
 ```
 yarn global add acdoc
 ```
 
+### CLI Usage
+
+`ACdoc` requires no arguments, just run it and go. It automatically looks at `git` staged files and only makes changes to files known to be compatible with `ACdoc`. Suprise suprise, right now that JS comment style files.
+
+### Pre-Commit Usage
+
+Want to run this as a pre-commit hook? Are you using Node.JS? (It's safe to say you are) Here is a quick rundown on getting started with `ACdoc` and pre-commit hooks.
+
+
+```
+npm install --save-dev acdoc pre-commit
+```
+or
+```
+yarn add -D acdoc pre-commit
+```
+
+Then modify in and around the scripts object in `package.json`
+```
+...
+	"scripts": {
+	  ...
+	  "acdoc": "node ./node_modules/acdoc/bin/acdoc.js"
+	},
+	"pre-commit": [
+	  "acdoc"
+	],
+...
+```
+
+More information about `pre-commit` can be found at [NPMJS: Pre-Commit](https://www.npmjs.com/package/pre-commit)
