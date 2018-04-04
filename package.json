@@ -1,0 +1,19 @@
+{
+  "name": "accountibility-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/acdoc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "acdoc": "bin/acdoc.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fullname": "^3.3.0",
+    "lodash": "^4.17.5",
+    "staged-git-files": "^1.1.1"
+  }
+}
