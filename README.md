@@ -17,9 +17,10 @@ It would be best to tie this into your IDE or code generators to keep formatting
 Currently `ACdoc` only supports editing existing AC Blocks but will soon have the ability to write blocks to files as well.
 
 ### Install
-Currently there is no NPM repository for this, as I will wait for a bit more substance and error handling before i do. So to install, clone this repo, and navigate into the repo directory. After, run the following:
 ```
-npm install -g .
+npm install -g acdoc
 ```
-After that install will be complete, linking an executable path to the local development folder. Just run `acdoc` and youre off!
+```
+yarn global add acdoc
+```
 
