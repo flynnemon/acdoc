@@ -4,8 +4,12 @@
   "description": "",
   "main": "bin/acdoc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "acdoc": "acdoc"
   },
+  "pre-commit": [
+    "acdoc"
+  ],
   "bin": {
     "acdoc": "bin/acdoc.js"
   },
@@ -15,5 +19,8 @@
     "fullname": "^3.3.0",
     "lodash": "^4.17.5",
     "staged-git-files": "^1.1.1"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
   }
 }
