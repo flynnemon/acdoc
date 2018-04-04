@@ -60,6 +60,7 @@ console.log("Starting ACdoc");
 fullname().then(name => {
 		sgf('A', ((err, data) => {
 		_.forEach(data, (file) => {
+			console.log(`Updating accountibility docblock for ${file.filename}`);
 			let abPath = path.resolve(file.filename);
 			if( slashComments.indexOf(path.extname(abPath)) > -1 ){
 				writeFile(abPath, name)
