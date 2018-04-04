@@ -1,7 +1,7 @@
 {
-  "name": "accountibility-docs",
+  "name": "acdoc",
   "version": "1.0.0",
-  "description": "",
+  "description": "Updates accountibility code block.",
   "main": "bin/acdoc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
