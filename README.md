@@ -14,7 +14,8 @@ the ACdoc docblock looks someting like this:
 ```
 It would be best to tie this into your IDE or code generators to keep formatting consistant, but will have no issues filling in the data so long as the keys exist. `ACdoc` will find these keys and keep contributors, edited last by, and date last edited up to date.
 
-Currently `ACdoc` only supports editing existing AC Blocks but will soon have the ability to write blocks to files as well.
+`ACdoc` supports both editing existinc AC Blocks, and also creating AC Blocks if the file doesnt already have it.
+It is worth nothing, `ACdoc` will consider the person running `ACdoc` the creator of the file. This should be fine in most cases.
 
 ### Install
 ```
