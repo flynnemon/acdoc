@@ -28,7 +28,7 @@ yarn global add acdoc
 
 ### CLI Usage
 
-`ACdoc` requires no arguments, just run it and go. It automatically looks at `git` staged files and only makes changes to files known to be compatible with `ACdoc`. Suprise suprise, right now that JS comment style files.
+`ACdoc` requires no arguments, just run it and go. It automatically looks at `git` staged files and only makes changes to files known to be compatible with `ACdoc`. Right now the script looks for JS, JSX, Python, and SH files.
 
 ### Pre-Commit Usage
 
