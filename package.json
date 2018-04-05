@@ -2,7 +2,7 @@
   "name": "acdoc",
   "version": "1.0.0",
   "description": "Updates accountibility code block.",
-  "main": "bin/acdoc.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "acdoc": "node ./bin/acdoc"
@@ -13,7 +13,7 @@
   "bin": {
     "acdoc": "bin/acdoc.js"
   },
-  "author": "",
+  "author": "Ryan Flynn",
   "license": "ISC",
   "dependencies": {
     "fullname": "^3.3.0",
