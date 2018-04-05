@@ -1,9 +1,9 @@
 /*
-* Created by: 			Ryan Flynn
-* Created Date: 		Wed, 04 Apr 2018 07:17:02 GMT
-* Date last edited:		Wed, 04 Apr 2018 07:56:47 GMT
-* Edited last by:		Ryan Flynn
-* Contributors: 		Ryan Flynn
+* Created by:           Ryan Flynn
+* Created Date:         Thu, 05 Apr 2018 04:09:16 GMT
+* Date last edited:     Thu, 05 Apr 2018 04:56:06 GMT
+* Edited last by:       Ryan Flynn
+* Contributors:         Ryan Flynn
 */
 
 "use strict";
